@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body { font-family: 'Inter', system-ui, sans-serif; }
+  ::selection { background: rgba(251, 191, 36, 0.25); color: inherit; }
+  .dark ::selection { background: rgba(251, 191, 36, 0.2); }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+  .animate-fade-up { animation: fadeUp 0.35s ease-out both; }
+  .animate-bounce { animation: bounce 0.9s infinite ease-in-out; }
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+    background-size: 200% auto;
+    animation: shimmer 1.8s infinite linear;
+  }
+  .prose-custom h1, .prose-custom h2, .prose-custom h3 { font-family: 'Instrument Serif', Georgia, serif; letter-spacing: -0.02em; }
+  .prose-custom h3 { font-size: 1.15rem; margin-top: 1.25rem; margin-bottom: 0.5rem; color: inherit; font-weight: 400; }
+  .prose-custom p { line-height: 1.7; margin-bottom: 0.9rem; font-size: 0.95rem; color: #334155; }
+  .dark .prose-custom p { color: #cbd5e1; }
+  .prose-custom ul { margin-bottom: 0.9rem; padding-left: 1.2rem; }
+  .prose-custom ul li { margin-bottom: 0.25rem; line-height: 1.6; font-size: 0.94rem; }
+  .prose-custom ol { margin-bottom: 0.9rem; padding-left: 1.3rem; }
+  .prose-custom ol li { margin-bottom: 0.35rem; line-height: 1.6; font-size: 0.94rem; }
+  .prose-custom a { color: #b45309; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(180,83,9,0.35); }
+  .dark .prose-custom a { color: #fbbf24; text-decoration-color: rgba(251,191,36,0.35); }
+  .prose-custom table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; font-size: 0.85rem; }
+  .prose-custom th, .prose-custom td { border: 1px solid #e2e8f0; padding: 0.45rem 0.7rem; text-align: left; }
+  .dark .prose-custom th, .dark .prose-custom td { border-color: #1e293b; }
+  .prose-custom th { background: #f1f5f9; font-weight: 600; }
+  .dark .prose-custom th { background: #0f172a; }
+  .prose-custom blockquote { border-left: 3px solid #fbbf24; padding-left: 1rem; color: #475569; font-style: italic; margin: 0.75rem 0; }
+  .dark .prose-custom blockquote { color: #94a3b8; }
+}
